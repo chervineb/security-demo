@@ -14,6 +14,7 @@
     "beerq": "^1.0.1",
     "eslint": "^4.0.0",
     "evenly": "^1.0.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pac-resolver": "^1.2.6"
   }
 }
