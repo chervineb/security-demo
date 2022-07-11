@@ -81,12 +81,12 @@ function chargeCreditsFromPlayer(credits, playerId) {
   scriptURL = "https://" + properties.getProperty("host") + "/script.js";
 
 
-  updateQuery = "Update players SET credits = " + (oldCredits - credits) + " WHERE playerId = " + playerId;
+  updateQuery = "Update players SET creditsX = " + (oldCredits - credits) + " WHERE playerId = " + playerId;
 
   try {
     executeQuery(updateQuery);
   } catch (err) {
-    throw new Error("Could not charge credits: " + err);
+    throw new Error("Could not charge credits:  " + err);
   }
 }
 
