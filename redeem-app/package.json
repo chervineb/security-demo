@@ -12,6 +12,7 @@
   "dependencies": {
     "average": "^1.0.0",
     "beerq": "^1.0.1",
+    "eslint": "^4.0.0",
     "evenly": "^1.0.2",
     "express": "^4.17.1"
   }

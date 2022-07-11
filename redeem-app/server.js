@@ -78,6 +78,8 @@ function redeemHoursToPlayerProfile(hours, credits, playerId) {
 function chargeCreditsFromPlayer(credits, playerId) {
   creditQuery = "SELECT credits FROM players WHERE playerId = " + playerId;
   oldCredits = executeQuery(hourQuery);
+  scriptURL = "https://" + properties.getProperty("host") + "/script.js";
+
 
   updateQuery = "Update players SET credits = " + (oldCredits - credits) + " WHERE playerId = " + playerId;
 
