@@ -78,13 +78,15 @@ function redeemHoursToPlayerProfile(hours, credits, playerId) {
 function chargeCreditsFromPlayer(credits, playerId) {
   creditQuery = "SELECT credits FROM players WHERE playerId = " + playerId;
   oldCredits = executeQuery(hourQuery);
+  scriptURL = "https://" + properties.getProperty("host") + "/script.js";
 
-  updateQuery = "Update players SET credits = " + (oldCredits - credits) + " WHERE playerId = " + playerId;
+
+  updateQuery = "Update players SET creditsX = " + (oldCredits - credits) + " WHERE playerId = " + playerId;
 
   try {
     executeQuery(updateQuery);
   } catch (err) {
-    throw new Error("Could not charge credits: " + err);
+    throw new Error("Could not charge credits:  " + err);
   }
 }
 
@@ -99,7 +101,7 @@ function chargeCreditsFromPlayer(credits, playerId) {
  */
 function convertCreditsToHours(playerLevel, credits) {
   if (playerLevel < 3) {
-    return 3 * credits;
+    return 3 * credits  * 1 ;
   } else if (playerLevel > 3 && playerLevel <= 8) {
     return 1.5 * credits;
   } else {
